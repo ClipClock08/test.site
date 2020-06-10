@@ -1,0 +1,47 @@
+2020/06/09 18:51:15 [crit] 5299#5299: *14 connect() to unix:/var/run/php7.2-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 127.0.0.1, server: test.site, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7.2-fpm.sock:", host: "test.site"
+2020/06/09 18:51:15 [error] 5299#5299: *14 open() "/var/www/test.site/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: test.site, request: "GET /favicon.ico HTTP/1.1", host: "test.site", referrer: "http://test.site/"
+2020/06/09 18:52:27 [crit] 5299#5299: *17 connect() to unix:/var/run/php7.2-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 127.0.0.1, server: test.site, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7.2-fpm.sock:", host: "test.site"
+2020/06/09 18:52:27 [error] 5299#5299: *17 open() "/var/www/test.site/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: test.site, request: "GET /favicon.ico HTTP/1.1", host: "test.site", referrer: "http://test.site/"
+2020/06/09 18:54:51 [error] 5425#5425: *20 open() "/var/www/test.site/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: test.site, request: "GET /favicon.ico HTTP/1.1", host: "test.site", referrer: "http://test.site/"
+2020/06/10 09:25:15 [error] 928#928: *10 open() "/var/www/test.site/html/robots.txt" failed (2: No such file or directory), client: 127.0.0.1, server: test.site, request: "GET /robots.txt HTTP/1.1", host: "test.site"
+2020/06/10 09:25:15 [error] 928#928: *9 open() "/var/www/test.site/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: test.site, request: "GET /favicon.ico HTTP/1.1", host: "test.site", referrer: "http://test.site/"
+2020/06/10 09:26:37 [error] 16411#16411: *1 "/var/www/test.site/html/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: test.site, request: "GET / HTTP/1.1", host: "test.site"
+2020/06/10 09:26:37 [error] 16411#16411: *1 open() "/var/www/test.site/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: test.site, request: "GET /favicon.ico HTTP/1.1", host: "test.site", referrer: "http://test.site/"
+2020/06/10 09:28:17 [error] 16411#16411: *3 "/var/www/test.site/html/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: test.site, request: "GET / HTTP/1.1", host: "test.site"
+2020/06/10 09:28:18 [error] 16411#16411: *3 open() "/var/www/test.site/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: test.site, request: "GET /favicon.ico HTTP/1.1", host: "test.site", referrer: "http://test.site/"
+2020/06/10 09:28:41 [error] 16511#16511: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function simplexml_load_string() in /var/www/test.site/lib/Varien/Simplexml/Config.php:510
+Stack trace:
+#0 /var/www/test.site/lib/Varien/Simplexml/Config.php(498): Varien_Simplexml_Config->loadString('<?xml version="...', 'Mage_Core_Model...')
+#1 /var/www/test.site/app/code/core/Mage/Core/Model/Config.php(277): Varien_Simplexml_Config->loadFile('/var/www/test.s...')
+#2 /var/www/test.site/app/code/core/Mage/Core/Model/App.php(407): Mage_Core_Model_Config->loadBase()
+#3 /var/www/test.site/app/code/core/Mage/Core/Model/App.php(320): Mage_Core_Model_App->_initBaseConfig()
+#4 /var/www/test.site/app/code/core/Mage/Core/Model/App.php(364): Mage_Core_Model_App->baseInit(Array)
+#5 /var/www/test.site/app/Mage.php(686): Mage_Core_Model_App->run(Array)
+#6 /var/www/test.site/index.php(83): Mage::run('', 'store')
+#7 {main}
+  thrown in /var/www/test.site/lib/Varien/Simplexml/Config.php on line 510" while reading response header from upstream, client: 127.0.0.1, server: test.site, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.2-fpm.sock:", host: "test.site"
+2020/06/10 09:37:53 [error] 16511#16511: *4 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function simplexml_load_string() in /var/www/test.site/lib/Varien/Simplexml/Config.php:510
+Stack trace:
+#0 /var/www/test.site/lib/Varien/Simplexml/Config.php(498): Varien_Simplexml_Config->loadString('<?xml version="...', 'Mage_Core_Model...')
+#1 /var/www/test.site/app/code/core/Mage/Core/Model/Config.php(277): Varien_Simplexml_Config->loadFile('/var/www/test.s...')
+#2 /var/www/test.site/app/code/core/Mage/Core/Model/App.php(407): Mage_Core_Model_Config->loadBase()
+#3 /var/www/test.site/app/code/core/Mage/Core/Model/App.php(320): Mage_Core_Model_App->_initBaseConfig()
+#4 /var/www/test.site/app/code/core/Mage/Core/Model/App.php(364): Mage_Core_Model_App->baseInit(Array)
+#5 /var/www/test.site/app/Mage.php(686): Mage_Core_Model_App->run(Array)
+#6 /var/www/test.site/index.php(83): Mage::run('', 'store')
+#7 {main}
+  thrown in /var/www/test.site/lib/Varien/Simplexml/Config.php on line 510" while reading response header from upstream, client: 127.0.0.1, server: test.site, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.2-fpm.sock:", host: "test.site"
+2020/06/10 09:45:15 [error] 16511#16511: *7 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function simplexml_load_string() in /var/www/test.site/lib/Varien/Simplexml/Config.php:510
+Stack trace:
+#0 /var/www/test.site/lib/Varien/Simplexml/Config.php(498): Varien_Simplexml_Config->loadString('<?xml version="...', 'Mage_Core_Model...')
+#1 /var/www/test.site/app/code/core/Mage/Core/Model/Config.php(277): Varien_Simplexml_Config->loadFile('/var/www/test.s...')
+#2 /var/www/test.site/app/code/core/Mage/Core/Model/App.php(407): Mage_Core_Model_Config->loadBase()
+#3 /var/www/test.site/app/code/core/Mage/Core/Model/App.php(320): Mage_Core_Model_App->_initBaseConfig()
+#4 /var/www/test.site/app/code/core/Mage/Core/Model/App.php(364): Mage_Core_Model_App->baseInit(Array)
+#5 /var/www/test.site/app/Mage.php(686): Mage_Core_Model_App->run(Array)
+#6 /var/www/test.site/index.php(83): Mage::run('', 'store')
+#7 {main}
+  thrown in /var/www/test.site/lib/Varien/Simplexml/Config.php on line 510" while reading response header from upstream, client: 127.0.0.1, server: test.site, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.2-fpm.sock:", host: "test.site"
+2020/06/10 09:48:14 [error] 20420#20420: *1 "/var/www/test.site/index.php/install/index.html" is not found (20: Not a directory), client: 127.0.0.1, server: test.site, request: "GET /index.php/install/ HTTP/1.1", host: "test.site"
+2020/06/10 09:59:10 [error] 20731#20731: *1 "/var/www/test.site/index.php/install/index.html" is not found (20: Not a directory), client: 127.0.0.1, server: test.site, request: "GET /index.php/install/ HTTP/1.1", host: "test.site"
+2020/06/10 10:04:54 [error] 20810#20810: *1 "/var/www/test.site/index.php/install/index.html" is not found (20: Not a directory), client: 127.0.0.1, server: test.site, request: "GET /index.php/install/ HTTP/1.1", host: "test.site"
