@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <My_FAQ>
+            <version>1.0.0</version>
+        </My_FAQ>
+    </modules>
+    <!-- Code for the frontend -->
+    <frontend>
+        <routers>
+            <mfaq>
+                <use>standard</use>
+                <args>
+                    <module>My_FAQ</module>
+                    <frontName>faq</frontName>
+                </args>
+            </mfaq>
+        </routers>
+    </frontend>
+    <global>
+        <models>
+            <faq>
+                <class>My_FAQ_Model</class>
+                <resourceModel>faq_mysql4</resourceModel>
+            </faq>
+            <faq_mysql4>
+                <class>My_FAQ_Model_Mysql4</class>
+                <entities>
+                    <faq>
+                        <table>my_faq</table>
+                    </faq>
+                </entities>
+            </faq_mysql4>
+        </models>
+        <resources>
+            <faq_setup>
+                <setup>
+                    <module>My_FAQ</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </faq_setup>
+            <faq_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </faq_write>
+            <faq_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </faq_read>
+        </resources>
+    </global>
+</config>

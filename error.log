@@ -4,3 +4,7 @@
 2020/06/10 12:59:39 [error] 14522#14522: *22 access forbidden by rule, client: 127.0.0.1, server: test.site, request: "POST /app/etc/local.xml HTTP/1.1", host: "test.site"
 2020/06/10 13:04:49 [error] 14522#14522: *40 access forbidden by rule, client: 127.0.0.1, server: test.site, request: "POST /app/etc/local.xml HTTP/1.1", host: "test.site"
 2020/06/10 13:05:17 [error] 14522#14522: *44 access forbidden by rule, client: 127.0.0.1, server: test.site, request: "POST /app/etc/local.xml HTTP/1.1", host: "test.site"
+2020/06/11 10:34:47 [error] 10439#10439: *50 access forbidden by rule, client: 127.0.0.1, server: test.site, request: "POST /app/etc/local.xml HTTP/1.1", host: "test.site"
+2020/06/15 18:27:29 [error] 18134#18134: *667 access forbidden by rule, client: 127.0.0.1, server: test.site, request: "POST /app/etc/local.xml HTTP/1.1", host: "test.site"
+2020/06/16 15:37:32 [error] 959#959: *1175 access forbidden by rule, client: 127.0.0.1, server: test.site, request: "POST /app/etc/local.xml HTTP/1.1", host: "test.site"
+2020/06/16 16:56:01 [error] 959#959: *1227 access forbidden by rule, client: 127.0.0.1, server: test.site, request: "POST /app/etc/local.xml HTTP/1.1", host: "test.site"
