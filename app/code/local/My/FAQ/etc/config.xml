@@ -21,16 +21,16 @@
         <models>
             <faq>
                 <class>My_FAQ_Model</class>
-                <resourceModel>faq_mysql4</resourceModel>
+                <resourceModel>faq_recource</resourceModel>
             </faq>
-            <faq_mysql4>
-                <class>My_FAQ_Model_Mysql4</class>
+            <faq_recource>
+                <class>My_FAQ_Model_Resource</class>
                 <entities>
-                    <faq>
+                    <table_faq>
                         <table>my_faq</table>
-                    </faq>
+                    </table_faq>
                 </entities>
-            </faq_mysql4>
+            </faq_recource>
         </models>
         <resources>
             <faq_setup>
@@ -63,24 +63,26 @@
             </my_faq>
         </helpers>
     </global>
+    <!-- Код для админки -->
     <admin>
         <routers>
-            <myfaq_admin>
+            <faq_admin>
                 <use>admin</use>
                 <args>
                     <module>My_FAQ</module>
-                    <frontName>myfaq_admin</frontName>
+                    <frontName>my_faq_admin</frontName>
                 </args>
-            </myfaq_admin>
+            </faq_admin>
         </routers>
     </admin>
+    <!-- Код для меню админки -->
     <adminhtml>
         <menu>
-            <myfaq module="myfaq">
-                <title>My FAQ</title>
+            <my_faq module="my_faq">
+                <title>Faq settings|</title>
                 <sort_order>77</sort_order>
-                <action>myfaq_admin/adminhtml_faq</action>
-            </myfaq>
+                <action>faq_admin/adminhtml_faq</action>
+            </my_faq>
         </menu>
     </adminhtml>
 </config>

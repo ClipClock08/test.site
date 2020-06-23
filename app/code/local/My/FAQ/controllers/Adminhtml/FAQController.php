@@ -6,7 +6,7 @@ class My_FAQ_Adminhtml_FAQController extends Mage_Adminhtml_Controller_Action
     {
         $this->loadLayout();
 
-        $this->_setActiveMenu('myfaq');
+        $this->_setActiveMenu('faq');
 
         $contentBlock = $this->getLayout()->createBlock('my_faq_block/adminhtml_faq');
 
@@ -25,13 +25,13 @@ class My_FAQ_Adminhtml_FAQController extends Mage_Adminhtml_Controller_Action
 
         $id = (int)$this->getRequest()->getParam('id');
 
-        $model = Mage::getModel('myfaq/faq')->load($id);
+        $model = Mage::getModel('faq/faq')->load($id);
 
         Mage::register('current_faq', $model);
 
-        $this->loadLayout()->_setActiveMenu('myfaq');
+        $this->loadLayout()->_setActiveMenu('faq');
 
-        $layout = $this->getLayout()->createBlock('my_faq_block/adminhtml_articles_edit');
+        $layout = $this->getLayout()->createBlock('my_faq_block/adminhtml_faq_edit');
 
         $this->_addContent($layout);
 
@@ -45,7 +45,7 @@ class My_FAQ_Adminhtml_FAQController extends Mage_Adminhtml_Controller_Action
             try {
                 $helper = Mage::helper('myfaq');
 
-                $model = Mage::getModel('myfaq/faq');
+                $model = Mage::getModel('faq/faq');
 
                 $model->setData($data)->setId($this->getRequest()->getParam('id'));
 
@@ -78,7 +78,7 @@ class My_FAQ_Adminhtml_FAQController extends Mage_Adminhtml_Controller_Action
     {
         if ($id = $this->getRequest()->getParam('id')) {
             try {
-                Mage::getModel('myfaq/faq')->setId($id)->delete();
+                Mage::getModel('faq/faq')->setId($id)->delete();
                 Mage::getSingleton('adminhtml/session')->addSuccess($this->__('FAQ post was deleted successfully'));
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
@@ -96,7 +96,7 @@ class My_FAQ_Adminhtml_FAQController extends Mage_Adminhtml_Controller_Action
         if (is_array($faq) && sizeof($faq) > 0) {
             try {
                 foreach ($faq as $id) {
-                    Mage::getModel('myfaq/faq')->setId($id)->delete();
+                    Mage::getModel('faq/faq')->setId($id)->delete();
                 }
                 $this->_getSession()->addSuccess($this->__('Total of %d FAQs have been deleted', sizeof($faq)));
             } catch (Exception $e) {
