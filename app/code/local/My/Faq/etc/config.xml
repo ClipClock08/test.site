@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <My_Faq>
+            <version>1.0.0</version>
+        </My_Faq>
+    </modules>
+    <!-- Code for the frontend -->
+    <frontend>
+        <routers>
+            <My_Faq>
+                <use>standard</use>
+                <args>
+                    <module>My_Faq</module>
+                    <frontName>Faq</frontName>
+                </args>
+            </My_Faq>
+        </routers>
+    </frontend>
+    <global>
+        <models>
+            <faq>
+                <class>My_Faq_Model</class>
+                <resourceModel>faq_resource</resourceModel>
+            </faq>
+            <faq_resource>
+                <class>My_Faq_Resource</class>
+                <entities>
+                    <mfaq>
+                        <table>my_faq</table>
+                    </mfaq>
+                </entities>
+            </faq_resource>
+        </models>
+        <resources>
+            <faq_setup>
+                <setup>
+                    <module>My_Faq</module>
+                </setup>
+            </faq_setup>
+        </resources>
+        <blocks>
+            <my_Faq>
+                <class>My_Faq_Block</class>
+            </my_Faq>
+        </blocks>
+        <helpers>
+            <my_Faq>
+                <class>My_Faq_Helper</class>
+            </my_Faq>
+        </helpers>
+    </global>
+    <!-- Код для админки -->
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Faq before="Mage_Adminhtml">My_Faq_Adminhtml</Faq>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <!-- Код для меню админки -->
+    <!--<adminhtml>
+        <menu>
+            <my module="my_Faq">
+                <title>Faq settings|</title>
+                <sort_order>77</sort_order>
+                <action>my_Faq_admin/adminhtml_Faq</action>
+            </my>
+        </menu>
+    </adminhtml>-->
+</config>
