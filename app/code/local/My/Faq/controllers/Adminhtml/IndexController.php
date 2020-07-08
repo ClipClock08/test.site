@@ -1,17 +1,18 @@
 <?php
 
-class My_FAQ_Adminhtml_FAQController extends Mage_Adminhtml_Controller_Action
+class My_FAQ_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
 {
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('faq/faq');
+    }
+
     public function indexAction()
     {
         $this->loadLayout();
-
-        $this->_setActiveMenu('faq');
-
+        $this->_title($this->__("FAQ Grid"));
         $contentBlock = $this->getLayout()->createBlock('my_faq_block/adminhtml_faq');
-
         $this->_addContent($contentBlock);
-
         $this->renderLayout();
     }
 
@@ -43,7 +44,7 @@ class My_FAQ_Adminhtml_FAQController extends Mage_Adminhtml_Controller_Action
 
         if ($data = $this->getRequest()->getPost()) {
             try {
-                $helper = Mage::helper('myfaq');
+                $helper = Mage::helper('faq');
 
                 $model = Mage::getModel('faq/faq');
 
@@ -106,5 +107,13 @@ class My_FAQ_Adminhtml_FAQController extends Mage_Adminhtml_Controller_Action
             $this->_getSession()->addError($this->__('Please select faq'));
         }
         $this->_redirect('*/*');
+    }
+
+    public function sayHelloAction()
+    {
+        echo "Hello World";
+        die;
+        $this->loadLayout();
+        $this->renderLayout();
     }
 }

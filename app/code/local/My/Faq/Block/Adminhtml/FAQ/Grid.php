@@ -3,43 +3,56 @@
 class My_FAQ_Block_Adminhtml_FAQ_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->setDefaultSort('id');
+        $this->setId('faq_faq_grid');
+        $this->setDefaultDir('asc');
+        $this->setSaveParametersInSession(true);
+    }
+
+    protected function _getCollectionClass(){
+        return 'faq/faq_collection';
+    }
+
     protected function _prepareCollection()
     {
-        $collection = Mage::getModel("myfaq/faq")->getCollection();
+        $collection = Mage::getResourceModel($this->_getCollectionClass());
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
 
     protected function _prepareColumns()
     {
-        $helper = Mage::helper('myfaq');
         $this->addColumn('id', array(
-            'header' => $helper->__('FAQ ID'),
+            'header' => $this->__('FAQ ID'),
             'width' => '50px',
             'index' => 'id'
         ));
         $this->addColumn('name', array(
-            'header' => $helper->__('Name'),
+            'header' => $this->__('Name'),
             'index' => 'name',
             'type' => 'text',
         ));
         $this->addColumn('question', array(
-            'header' => $helper->__('Question'),
+            'header' => $this->__('Question'),
             'index' => 'question',
             'type' => 'text',
         ));
         $this->addColumn('answer', array(
-            'header' => $helper->__('Answer'),
+            'header' => $this->__('Answer'),
             'index' => 'answer',
             'type' => 'text',
         ));
         $this->addColumn('created', array(
-            'header' => $helper->__('Created'),
+            'header' => $this->__('Created'),
             'index' => 'created',
             'type' => 'date',
         ));
         $this->addColumn('status', array(
-            'header' => $helper->__('Status'),
+            'header' => $this->__('Status'),
             'index' => 'status',
             'type' => 'text',
         ));

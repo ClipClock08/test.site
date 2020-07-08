@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <faq>
+            <title>Faq Settings</title>
+            <sort_order>32</sort_order>
+            <action>adminhelloworld/adminhtml_index/index</action>
+        </faq>
+    </menu>
+    <layout>
+        <updates>
+            <faq>
+                <file>hello.xml</file>
+            </faq>
+        </updates>
+    </layout>
+</config>

@@ -13,10 +13,13 @@
     }
 }*/
 
-class My_FAQ_Adminhtml_FAQController extends Mage_Adminhtml_Controller_Action
+class My_FAQ_Adminhtml_FAQ extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
-    public function myactionAction()
+    public function __construct()
     {
-        die('admin');
+        $this->_blockGroup = 'faq';
+        $this->_controller = 'adminhtml_faq';
+        $this->_headerText = $this->__('Grid');
+        parent::__construct();
     }
 }

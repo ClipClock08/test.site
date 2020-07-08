@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Lopatin_Test01>
+            <version>0.1.0</version>
+        </Lopatin_Test01>
+    </modules>
+    <global>
+        <models>
+            <test01>
+                <class>Lopatin_Test01_Model</class>
+                <entities>
+                    <test01>
+                        <table>myfaq</table>
+                    </test01>
+                </entities>
+            </test01>
+        </models>
+
+        <resources>
+            <test01_setup>
+                <setup>
+                    <module>Lopatin_Test01</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </test01_setup>
+            <test01_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </test01_write>
+            <test01_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </test01_read>
+        </resources>
+    </global>
+</config>

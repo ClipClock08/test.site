@@ -4,7 +4,7 @@
  */
 $installer = $this;
 $installer->startSetup();
-$table = $installer->getConnection()->newTable($installer->getTable('faq/mfaq'))
+$table = $installer->getConnection()->newTable($installer->getTable('test01/myfaq'))
     ->addColumn('block_id', Varien_Db_Ddl_Table::TYPE_INTEGER, 11, array(
         'unsigned' => true,
         'nullable' => false,
