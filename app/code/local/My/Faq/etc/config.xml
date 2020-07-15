@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <config>
     <modules>
-        <My_Faq>
+        <my_faq>
             <version>1.1.0</version>
-        </My_Faq>
+        </my_faq>
     </modules>
     <!-- Code for the frontend -->
     <frontend>
@@ -11,11 +11,18 @@
             <myfaq>
                 <use>standard</use>
                 <args>
-                    <module>My_Faq</module>
-                    <frontName>questions</frontName>
+                    <module>my_faq</module>
+                    <frontName>faq</frontName>
                 </args>
             </myfaq>
         </routers>
+        <layout>
+            <updates>
+                <my_faq module="my_faq">
+                    <file>faq.xml</file>
+                </my_faq>
+            </updates>
+        </layout>
     </frontend>
     <global>
         <models>
@@ -35,19 +42,19 @@
         <resources>
             <faq_setup>
                 <setup>
-                    <module>My_Faq</module>
+                    <module>my_faq</module>
                 </setup>
             </faq_setup>
         </resources>
         <blocks>
-            <My_Faq>
+            <my_faq>
                 <class>My_Faq_Block</class>
-            </My_Faq>
+            </my_faq>
         </blocks>
         <helpers>
-            <My_Faq>
+            <my_faq>
                 <class>My_Faq_Helper</class>
-            </My_Faq>
+            </my_faq>
         </helpers>
     </global>
     <!-- Код для админки -->
@@ -56,17 +63,10 @@
             <faq>
                 <use>admin</use>
                 <args>
-                    <module>My_Faq</module>
+                    <module>my_faq</module>
                     <frontName>adminhelloworld</frontName>
                 </args>
             </faq>
         </routers>
     </admin>
-    <layout>
-        <updates>
-            <faq>
-                <file>faq.xml</file>
-            </faq>
-        </updates>
-    </layout>
 </config>

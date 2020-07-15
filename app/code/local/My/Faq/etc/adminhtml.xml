@@ -14,4 +14,23 @@
             </faq>
         </updates>
     </layout>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <my_faq translate="title" module="my_faq">
+                                        <title>My Faq</title>
+                                    </my_faq>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
 </config>

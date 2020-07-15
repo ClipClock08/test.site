@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <my_faq>
+            <active>true</active>
+            <codePool>local</codePool>
+        </my_faq>
+    </modules>
+</config>

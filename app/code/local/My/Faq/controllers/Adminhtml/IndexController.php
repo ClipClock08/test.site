@@ -1,6 +1,6 @@
 <?php
 
-class My_FAQ_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
+class My_Faq_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
 {
     protected function _isAllowed()
     {
@@ -11,7 +11,8 @@ class My_FAQ_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
     {
         $this->loadLayout();
         $this->_title($this->__("FAQ Grid"));
-        $contentBlock = $this->getLayout()->createBlock('my_faq_block/adminhtml_faq');
+        $this->_setActiveMenu('faq');
+        $contentBlock = $this->getLayout()->createBlock('adminhelloworld/adminhtml_index');
         $this->_addContent($contentBlock);
         $this->renderLayout();
     }
@@ -107,13 +108,5 @@ class My_FAQ_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
             $this->_getSession()->addError($this->__('Please select faq'));
         }
         $this->_redirect('*/*');
-    }
-
-    public function sayHelloAction()
-    {
-        echo "Hello World";
-        die;
-        $this->loadLayout();
-        $this->renderLayout();
     }
 }

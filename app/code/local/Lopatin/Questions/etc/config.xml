@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <modules>
+        <Lopatin_Questions>
+            <version>0.0.1</version>
+        </Lopatin_Questions>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <questions>
+                    <file>lopatin_questions.xml</file>
+                </questions>
+            </updates>
+        </layout>
+        <routers>
+            <questions>
+                <use>standard</use>
+                <args>
+                    <module>Lopatin_Questions</module>
+                    <frontName>questions</frontName>
+                </args>
+            </questions>
+        </routers>
+    </frontend>
+    <global>
+        <models>
+            <questions>
+                <resourceModel>questions_resource</resourceModel>
+            </questions>
+            <questions_resource>
+                <entities>
+                    <table_question>
+                        <table>questions</table>
+                    </table_question>
+                </entities>
+            </questions_resource>
+        </models>
+        <resources>
+            <questions_setup>
+                <setup>
+                    <module>Lopatin_Questions</module>
+                </setup>
+            </questions_setup>
+        </resources>
+    </global>
+</config>

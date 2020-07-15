@@ -1,10 +1,14 @@
 <?php
-/**
- * @var Mage_Core_Model_Resource $installer
- */
 $installer = $this;
+/* @var $installer Mage_Core_Model_Resource_Setup */
+
 $installer->startSetup();
-$table = $installer->getConnection()->newTable($installer->getTable('test01/myfaq'))
+$tableName = $installer->getTable('questions/table_question');
+
+
+$installer->getConnection()->dropTable($tableName);
+$table = $installer->getConnection()
+    ->newTable($tableName)
     ->addColumn('block_id', Varien_Db_Ddl_Table::TYPE_INTEGER, 11, array(
         'unsigned' => true,
         'nullable' => false,

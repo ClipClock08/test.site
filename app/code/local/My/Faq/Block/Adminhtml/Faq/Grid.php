@@ -1,6 +1,6 @@
 <?php
 
-class My_FAQ_Block_Adminhtml_FAQ_Grid extends Mage_Adminhtml_Block_Widget_Grid
+class My_Faq_Block_Adminhtml_Faq_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
 
     public function __construct()
@@ -21,6 +21,7 @@ class My_FAQ_Block_Adminhtml_FAQ_Grid extends Mage_Adminhtml_Block_Widget_Grid
     {
         $collection = Mage::getResourceModel($this->_getCollectionClass());
         $this->setCollection($collection);
+
         return parent::_prepareCollection();
     }
 

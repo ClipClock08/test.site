@@ -13,13 +13,15 @@
     }
 }*/
 
-class My_FAQ_Adminhtml_FAQ extends Mage_Adminhtml_Block_Widget_Grid_Container
+class My_Faq_Block_Adminhtml_FAQ extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
-    public function __construct()
+    public function _construct()
     {
+        parent::_construct();
+        $helper = Mage::helper('My_Faq');
         $this->_blockGroup = 'faq';
         $this->_controller = 'adminhtml_faq';
-        $this->_headerText = $this->__('Grid');
-        parent::__construct();
+        $this->_headerText = $helper->__('Grid');
+        $this->_addButtonLabel = $helper->__('Add faq');
     }
 }
