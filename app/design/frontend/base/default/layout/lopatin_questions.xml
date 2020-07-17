@@ -2,7 +2,12 @@
 <layout>
     <questions_index_index>
         <reference name="content">
-            <block type="core/template" template="lopatin_questions/index.phtml"/>
+            <block type="lpquestions/questions" template="lopatin_questions/index.phtml"/>
         </reference>
     </questions_index_index>
+    <questions_index_view>
+        <reference name="content">
+            <block type="lpquestions/view" name="questions.content" template="lopatin_questions/view.phtml"/>
+        </reference>
+    </questions_index_view>
 </layout>

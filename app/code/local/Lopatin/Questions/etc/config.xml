@@ -23,12 +23,44 @@
             </questions>
         </routers>
     </frontend>
+    <admin>
+        <routers>
+            <lpquestions_admin>
+                <use>admin</use>
+                <args>
+                    <module>Lopatin_Questions</module>
+                    <frontName>lpquestions_admin</frontName>
+                </args>
+            </lpquestions_admin>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <lpquestions module="lpquestions">
+                <title>FAQ</title>
+                <sort_order>200</sort_order>
+                <action>lpquestions_admin/adminhtml_questions</action>
+            </lpquestions>
+        </menu>
+    </adminhtml>
     <global>
+        <blocks>
+            <lpquestions>
+                <class>Lopatin_Questions_Block</class>
+            </lpquestions>
+        </blocks>
+        <helpers>
+            <lpquestions>
+                <class>Lopatin_Questions_Helper</class>
+            </lpquestions>
+        </helpers>
         <models>
             <questions>
+                <class>Lopatin_Questions_Model</class>
                 <resourceModel>questions_resource</resourceModel>
             </questions>
             <questions_resource>
+                <class>Lopatin_Questions_Model_Resource</class>
                 <entities>
                     <table_question>
                         <table>questions</table>

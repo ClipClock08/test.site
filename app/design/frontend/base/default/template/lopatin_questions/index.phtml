@@ -1,1 +1,74 @@
-<h1>Template lopatin_questions/index.phtml</h1>
+<style>
+    .custom-accordion {
+        margin: 50px;
+    }
+
+    .custom-accordion .question,
+    .custom-accordion .answer {
+        padding: 10px;
+        border: 1px solid black;
+        border-bottom: 0;
+    }
+
+    .custom-accordion .question:last-of-type,
+    .custom-accordion .answer:last-of-type {
+        border-bottom: 1px solid black;
+    }
+
+    .custom-accordion .question a,
+    .custom-accordion .answer a {
+        display: block;
+        color: black;
+        font-weight: bold;
+    }
+
+    .custom-accordion .answer {
+        border-top: 0;
+        font-size: 12px;
+    }
+
+    .custom-accordion .answer:last-of-type {
+        border-top: 1px solid white;
+        position: relative;
+        top: -1px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    body {
+        font: 16px Sans-Serif;
+    }
+
+</style>
+<?php
+$questions = $this->getQuestionsCollection();
+$questionUrl = Mage::getUrl('questions/index/view');
+?>
+<h1>Questions</h1>
+<div class="custom-accordion">
+    <?php foreach ($questions as $question): ?>
+        <div class="question">
+            <a href="#">
+                <?php echo $question->getQuestion(); ?>
+            </a>
+        </div>
+        <div class="answer">
+            <?php echo $question->getAnswer(); ?>
+        </div>
+    <?php endforeach;
+    // echo $questionUrl .'?id='. $question->getBlockID() '; ?>
+</div>
+<script>(function ($) {
+
+        var allPanels = $('.custom-accordion > .answer').hide();
+
+        $('.custom-accordion > .question > a').click(function () {
+            allPanels.slideUp();
+            $(this).parent().next().slideDown();
+            return false;
+        });
+
+    })(jQuery);
+</script>
