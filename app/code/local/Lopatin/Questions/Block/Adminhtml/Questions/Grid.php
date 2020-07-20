@@ -41,10 +41,13 @@ class Lopatin_Questions_Block_Adminhtml_Questions_Grid extends Mage_Adminhtml_Bl
             'index' => 'faq_date',
             'type' => 'date'
         ));
-
+        $options = Mage::getSingleton('sales/order_config')->getStatuses();
+        $options['require_correction_follow_up'] = $this->__('Follow up for required correction');
         $this->addColumn('status', array(
             'header' => $helper->__('Status'),
             'index' => 'status',
+            'type' => 'options',
+            'options' => Mage::getModel('questions/source_myoptions')->toArray()
         ));
 
         return parent::_prepareColumns();
@@ -60,5 +63,12 @@ class Lopatin_Questions_Block_Adminhtml_Questions_Grid extends Mage_Adminhtml_Bl
             'url' => $this->getUrl('*/*/massDelete')
         ));
         return $this;
+    }
+
+    public function getRowUrl($model)
+    {
+        return $this->getUrl('*/*/edit', array(
+            'id' => $model->getBlockID(),
+        ));
     }
 }

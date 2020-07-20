@@ -9,7 +9,7 @@ class Lopatin_Questions_Adminhtml_QuestionsController extends Mage_Adminhtml_Con
         $this->renderLayout();
     }
 
-    public function addAction()
+    public function newAction()
     {
         $this->_forward('edit');
     }
@@ -19,7 +19,7 @@ class Lopatin_Questions_Adminhtml_QuestionsController extends Mage_Adminhtml_Con
         $id = $this->getRequest()->getParam('id');
         Mage::register('current_faq', Mage::getModel('questions/questions')->load($id));
         $this->loadLayout()->_setActiveMenu('lpquestions');
-        $this->_addContent($this->getLayout()->createBlock('lpquestions/adminhtml_questions'));
+        $this->_addContent($this->getLayout()->createBlock('lpquestions/adminhtml_questions_edit'));
         $this->renderLayout();
     }
 
@@ -51,9 +51,13 @@ class Lopatin_Questions_Adminhtml_QuestionsController extends Mage_Adminhtml_Con
 
     public function deleteAction()
     {
-        if ($id = $this->getRequest()->getParam('id')){
+        if ($id = $this->getRequest()->getParam('id')) {
             try {
-
+                Mage::getModel('questions/questions')->setId($id)->delete();
+                Mage::getSingleton('adminhtml/session')->addSuccess($this->__('FAQ was deleted successfully'));
+            } catch (Exception $e) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+                $this->_redirect('*/*/edit', array('id' => $id));
             }
         }
         $this->_redirect('*/*/');

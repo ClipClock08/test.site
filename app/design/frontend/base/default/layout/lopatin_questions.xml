@@ -4,6 +4,9 @@
         <reference name="content">
             <block type="lpquestions/questions" template="lopatin_questions/index.phtml"/>
         </reference>
+        <reference name="content">
+            <block type="lpquestions/questions" name="banner" after="-"  template="lopatin_questions/form.phtml" />
+        </reference>
     </questions_index_index>
     <questions_index_view>
         <reference name="content">

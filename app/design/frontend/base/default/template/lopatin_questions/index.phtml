@@ -43,7 +43,7 @@
 
 </style>
 <?php
-$questions = $this->getQuestionsCollection();
+$questions = $this->getCollection();
 $questionUrl = Mage::getUrl('questions/index/view');
 ?>
 <h1>Questions</h1>
@@ -53,12 +53,21 @@ $questionUrl = Mage::getUrl('questions/index/view');
             <a href="#">
                 <?php echo $question->getQuestion(); ?>
             </a>
+            <div class="row"><?php echo $question->getName(); ?></div>
         </div>
         <div class="answer">
-            <?php echo $question->getAnswer(); ?>
+            <div class="row">
+                <?php echo $question->getAnswer(); ?>
+            </div>
+            <hr>
+            <div class="row"><?php echo date('d M Y', strtotime($question->getFaqDate())); ?></div>
         </div>
     <?php endforeach;
-    // echo $questionUrl .'?id='. $question->getBlockID() '; ?>
+    // echo $questionUrl .'?id='. $question->getBlockID() ';
+    ?>
+</div>
+<div class="toolbar-bottom">
+    <?php echo $this->getPagerHtml(); ?>
 </div>
 <script>(function ($) {
 

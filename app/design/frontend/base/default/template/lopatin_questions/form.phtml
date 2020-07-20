@@ -1,0 +1,17 @@
+<form action="<?php echo $this->getUrl('questions/index/post'); ?>" id="customform" method="post">
+    <ul class="form-list">
+        <li><label>Name</label><br>
+            <input class="input-text required-entry" id="name" name="name" style="width: 250px;" type="text"></li>
+
+        <li><label>Question</label><br>
+            <input class="input-text required-entry" id="question" name="question" style="width: 250px;" type="text">
+        </li>
+
+    </ul>
+    <button class="form-button-alt" type="submit"><span>Submit Your Question</span></button>
+</form>
+<script type="text/javascript">
+    //<![CDATA[
+    var customform = new VarienForm('customform', true);
+    //]]>
+</script>

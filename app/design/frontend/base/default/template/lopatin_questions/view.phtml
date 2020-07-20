@@ -1,2 +1,6 @@
 <h1><?php echo $questionItem->getQuestion(); ?></h1>
-<div class="content"><?php echo $questionItem->getAnswer(); ?></div>
+<h2><?php echo $questionItem->getName(); ?></h2>
+<div class="content">
+    <div class="row"> <?php echo $questionItem->getAnswer(); ?></div>
+    <div class="row"> <?php echo $questionItem->getFaqDate(); ?></div>
+</div>
